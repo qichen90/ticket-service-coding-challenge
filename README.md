@@ -15,9 +15,9 @@ The solution and tests are built using Maven.
 
 ## Instructions
 ### Building the solution
-
+   ./mvn compile
 ### Running the tests
-
+   ./mvn test
 ## Built With
 * [Maven](https://maven.apache.org/) - Dependency Management
 
