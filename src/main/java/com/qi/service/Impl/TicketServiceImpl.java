@@ -59,6 +59,7 @@ public class TicketServiceImpl implements TicketService {
      *
      * @return the number of tickets available in the venue
      */
+    @Override
     public int numSeatsAvailable() {
         return venue.getNumberOfOpenSeats();
     }
@@ -71,6 +72,7 @@ public class TicketServiceImpl implements TicketService {
      * @return a SeatHold object identifying the specific seats and related
     information
      */
+    @Override
     public synchronized SeatHold findAndHoldSeats(int numSeats, String customerEmail) {
         if(numSeats <= 0 || !EmailValidator.getInstance().isValid(customerEmail)){
             return null;
@@ -100,6 +102,7 @@ public class TicketServiceImpl implements TicketService {
     seat hold is assigned
      * @return a reservation confirmation code
      */
+    @Override
     public synchronized String reserveSeats(int seatHoldId, String customerEmail) {
         SeatHold seathold = seatsHoldTable.get(seatHoldId);
         // no seatHoldId matched or has expired
